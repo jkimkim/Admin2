@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout adminOptions;
     private StorageReference storageReference;
     private List<User> downloadUrls;
+    final List<Upload> uploadList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
             new Fetcher().fetchApplications(new CompleteListener() {
                 @Override
                 public void onUploadFetched(List<Upload> uploads) {
+                    uploadList.addAll(uploads);
                     progressDialog.dismiss();
                     AdminAdapterDialog.showDialog(getSupportFragmentManager(),uploads);
                 }
