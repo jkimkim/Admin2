@@ -67,6 +67,7 @@ public class AdminAdapter extends RecyclerView.Adapter<AdminAdapter.Holder> {
         holder.subLocationView.setText(String.format("S.Location: %s", upload.getSubLocation()));
         holder.constituencyView.setText(String.format("Constituency: %s", upload.getConstituency()));
         holder.dobView.setText(String.format("DoB: %s", upload.getDate()));
+        holder.yearView.setText(String.format("Year of study: %s", upload.getYearOfStudy()));
         Glide.with(context).load(uploadList.get(position).getDownloadUrls().get(0)).into(holder.idimageView);
         Glide.with(context).load(uploadList.get(position).getDownloadUrls().get(1)).into(holder.certimageView);
         Glide.with(context).load(uploadList.get(position).getDownloadUrls().get(2)).into(holder.feeimageView);
@@ -80,7 +81,7 @@ public class AdminAdapter extends RecyclerView.Adapter<AdminAdapter.Holder> {
     }
 
     public static class Holder extends RecyclerView.ViewHolder {
-        MaterialTextView IdView, DateView, statusView, nameView, adnoView, courseView, emailView, phoneView, institutionView, institutionPhoneView, bankView, branchView, accountNameView,districtView, divisionView, locationView, wardView, constituencyView, subLocationView, villageView, dobView;
+        MaterialTextView IdView, DateView, statusView, nameView, adnoView, courseView, emailView, phoneView, institutionView, institutionPhoneView, bankView, branchView, accountNameView,districtView, divisionView, locationView, wardView, constituencyView, subLocationView, villageView, dobView, yearView;
         MaterialCardView cardView;
         ImageView reportimageView, feeimageView, idimageView, certimageView;
 
@@ -112,6 +113,7 @@ public class AdminAdapter extends RecyclerView.Adapter<AdminAdapter.Holder> {
             certimageView = itemView.findViewById(R.id.certImg);
             feeimageView = itemView.findViewById(R.id.feeImg);
             reportimageView = itemView.findViewById(R.id.reportImg);
+            yearView = itemView.findViewById(R.id.year_of_study);
         }
     }
 }

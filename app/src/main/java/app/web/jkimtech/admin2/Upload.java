@@ -28,8 +28,9 @@ public class Upload implements Serializable {
     String constituency;
     String subLocation;
     String village;
+    String yearOfStudy;
 
-    public Upload(List<String> downloadUrls, String userId, String uploadId, String gender,String status,String appDate, String name, String email, String phone, String admNo, String course, String institution, String institutionPhoneNo, String bankName, String bankAccountNo, String bankBranch, String district, String division, String location, String ward, String constituency, String subLocation, String village, String date) {
+    public Upload(List<String> downloadUrls, String userId, String uploadId, String gender,String status,String appDate, String name, String email, String phone, String admNo, String course, String institution, String institutionPhoneNo, String bankName, String bankAccountNo, String bankBranch, String district, String division, String location, String ward, String constituency, String subLocation, String village, String date, String yearOfStudy) {
         this.downloadUrls = downloadUrls;
         this.userId = userId;
         this.uploadId=uploadId;
@@ -54,6 +55,7 @@ public class Upload implements Serializable {
         this.subLocation = subLocation;
         this.village = village;
         this.date = date;
+        this.yearOfStudy = yearOfStudy;
     }
 
     public Upload() {
@@ -249,6 +251,14 @@ public class Upload implements Serializable {
 
     public void setVillage(String village) {
         this.village = village;
+    }
+
+    public String getYearOfStudy() {
+        return yearOfStudy;
+    }
+
+    public void setYearOfStudy(String yearOfStudy) {
+        this.yearOfStudy = yearOfStudy;
     }
 }
 
